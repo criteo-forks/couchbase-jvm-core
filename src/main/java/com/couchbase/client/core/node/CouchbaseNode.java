@@ -29,6 +29,7 @@ import com.couchbase.client.core.message.internal.HealthCheckResponse;
 import com.couchbase.client.core.message.internal.RemoveServiceRequest;
 import com.couchbase.client.core.message.internal.ServicesHealth;
 import com.couchbase.client.core.message.internal.SignalFlush;
+import com.couchbase.client.core.message.kv.UpsertRequest;
 import com.couchbase.client.core.retry.RetryHelper;
 import com.couchbase.client.core.service.Service;
 import com.couchbase.client.core.service.ServiceFactory;
@@ -187,6 +188,10 @@ public class CouchbaseNode extends AbstractStateMachine<LifecycleState> implemen
 
     @Override
     public void send(final CouchbaseRequest request) {
+        if(request instanceof UpsertRequest) {
+            ((UpsertRequest) request).node = this;
+        }
+
         if (request instanceof SignalFlush) {
             for (Service service : serviceRegistry.services()) {
                 service.send(request);

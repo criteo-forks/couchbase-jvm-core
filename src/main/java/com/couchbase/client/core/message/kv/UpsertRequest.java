@@ -15,6 +15,7 @@
  */
 package com.couchbase.client.core.message.kv;
 
+import com.couchbase.client.core.node.CouchbaseNode;
 import io.netty.buffer.ByteBuf;
 
 /**
@@ -39,6 +40,7 @@ public class UpsertRequest extends AbstractKeyValueRequest implements BinaryStor
      * The optional flags.
      */
     private final int flags;
+    public CouchbaseNode node;
 
     private final boolean json;
 

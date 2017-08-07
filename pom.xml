@@ -290,7 +290,6 @@
                     </transformers>
                     <artifactSet>
                         <excludes>
-                            <exclude>io.reactivex:rxjava</exclude>
                             <exclude>org.slf4j:slf4j-api</exclude>
                             <exclude>commons-logging:commons-logging</exclude>
                             <exclude>log4j:log4j</exclude>
