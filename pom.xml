@@ -14,9 +14,9 @@
 
     -->
 
-    <groupId>com.couchbase.client</groupId>
-    <artifactId>core-io</artifactId>
-    <version>1.5.1</version>
+    <groupId>org.criteo.nosql</groupId>
+    <artifactId>couchbase-jvm-core</artifactId>
+    <version>1.5.1-criteo</version>
     <packaging>jar</packaging>
 
     <name>Couchbase JVM Core IO</name>
